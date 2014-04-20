@@ -7,6 +7,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
+" we can specify a custom path for Vundle'd plugins:
 " let path = '~/some/path/here'
 call vundle#rc()
 

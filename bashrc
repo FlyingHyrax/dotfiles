@@ -28,7 +28,7 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors ~/.mydircolors`"
-    #test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
@@ -110,8 +110,11 @@ source ~/bin/todo_completion
 complete -F _todo todo
 export TODOTXT_DEFAULT_ACTION=ls
 
+# not totally sure what this does, I *believe* it's for gnat?
+export LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
 # PATH additions
-PATH=$PATH:"$HOME/bin/android/tools":"$HOME/bin/android/platform-tools"
+PATH=$PATH:"/usr/local/gnat/bin/" #gnat (ada)
+PATH=$PATH:"/usr/local/go/bin/" #golang
+PATH=$PATH:"$HOME/bin/android/tools":"$HOME/bin/android/platform-tools" #android
 PATH=$PATH:"$HOME/.rvm/bin" # Add RVM to PATH for scripting
-PATH=$PATH:"$HOME/pear/bin"
 PATH=$PATH:"./"
