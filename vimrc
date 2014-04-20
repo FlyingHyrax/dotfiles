@@ -1,14 +1,26 @@
 " much general stuff is handled by vim-sensible:
 " https://github.com/tpope/vim-sensible
 " opts that are commented out are in sensible but kept for reference
+" Install vundle:
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 set nocompatible
+filetype off
 
-" run pathogen
-execute pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+" let path = '~/some/path/here'
+call vundle#rc()
 
-" turn on Solarize
-" syntax enable
-"let g:solarized_termcolors=256
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-sensible'
+Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'groenewege/vim-less'
+Bundle 'kchmck/vim-coffee-script'
+
+
+filetype plugin indent on
+syntax enable
 set background=light
 colorscheme solarized
 
