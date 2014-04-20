@@ -11,13 +11,13 @@ set rtp+=~/.vim/bundle/vundle/
 " let path = '~/some/path/here'
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-sensible'
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'groenewege/vim-less'
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-sensible'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
 
 
 filetype plugin indent on
