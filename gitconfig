@@ -1,0 +1,12 @@
+[user]
+	name = Matthew Seiler
+	email = theflyinghyrax@gmail.com
+[core]
+	editor = vim
+	autocrlf = input
+[color]
+	ui = true
+[help]
+	autocorrect = 1
+[github]
+	user = FlyingHyrax
