@@ -18,6 +18,8 @@ Plugin 'tpope/vim-sensible'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/syntastic.git'
 
 
 filetype plugin indent on
