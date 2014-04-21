@@ -1,2 +1,8 @@
-Personal dotfiles
-TODO: .vim directory, git subtree (or submodules) for pathogen plugins
+## dotfiles ##
+**my personal dotfiles**
+Currently unorganized, forever a work in progress...
+TODO:
+- .gitconfig
+- fancy git-enabled bash prompt
+- snippets?
+
