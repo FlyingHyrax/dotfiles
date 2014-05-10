@@ -31,7 +31,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 
 filetype plugin indent on
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 " mappings so we don't have to hit shift so often
