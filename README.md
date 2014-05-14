@@ -10,6 +10,7 @@ Currently unorganized, forever a work in progress...
 4. Install vim plugins: `PluginInstall` (in Vim)
 
 **TODO:**
+- Solarized colors in todo.cfg
 - prevent .vim from recursively symlinking to itself when makelinks is run more than once
 - fancy git-enabled bash prompt
 - snippets?
