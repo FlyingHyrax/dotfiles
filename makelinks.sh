@@ -8,7 +8,7 @@
 
 dir=~/dotfiles # dotfiles directory
 olddir=~/backup/dotfiles # old dotfiles backup directory
-files="bash_aliases bashrc vimrc vim" 
+files="profile gitconfig bash_aliases bashrc vimrc vim" 
 
 ##########
 
