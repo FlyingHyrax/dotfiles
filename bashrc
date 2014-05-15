@@ -105,16 +105,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# bits and bobs for todo.sh https://github.com/ginatrapani/todo.txt-cli/wiki/Quick-Start-Guide 
+# for todo.sh https://github.com/ginatrapani/todo.txt-cli/wiki/Quick-Start-Guide 
+export TODOTXT_DEFAULT_ACTION=ls
 if [ -f ~/bin/todo_completion ]
 then
     source ~/bin/todo_completion
+    complete -F _todo todo
 fi
-complete -F _todo todo
-export TODOTXT_DEFAULT_ACTION=ls
-
-# not totally sure what this does, I *believe* it's for gnat?
-export LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
 
 # either private or local to this machine:
 if [ -f ~/dotfiles/.local ]
@@ -122,9 +119,15 @@ then
     source ~/dotfiles/.local
 fi
 
+# not totally sure what this does, I *believe* it's for gnat?
+export LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
+
+# android is at:
+export ANDROID_HOME="$HOME/bin/android"
+
 # PATH additions
 PATH=$PATH:"/usr/local/gnat/bin/" #gnat (ada)
 PATH=$PATH:"/usr/local/go/bin/" #golang
-PATH=$PATH:"$HOME/bin/android/tools":"$HOME/bin/android/platform-tools" #android
+PATH=$PATH:"$ANDROID_HOME/tools":"$ANDROID_TOOLS/platform-tools" #android
 PATH=$PATH:"$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:"./"
