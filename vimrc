@@ -83,6 +83,9 @@ nnoremap <leader>p :set paste!<CR>
 " hotkey toggle whitespace indicators
 nmap <silent> <leader>s :set nolist!<CR>
 
+" we'll be overwriting Sensible's 'nohlsearch' hotkey; use another instead
+nnoremap <leader>hl :set hlsearch!<CR>
+
 " Useful mappings for splits.
 " <leader>w opens a new vertical split.
 nnoremap <leader>w <C-w>v<C-w>l

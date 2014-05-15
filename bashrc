@@ -106,12 +106,22 @@ if ! shopt -oq posix; then
 fi
 
 # bits and bobs for todo.sh https://github.com/ginatrapani/todo.txt-cli/wiki/Quick-Start-Guide 
-source ~/bin/todo_completion
+if [ -f ~/bin/todo_completion ]
+then
+    source ~/bin/todo_completion
+fi
 complete -F _todo todo
 export TODOTXT_DEFAULT_ACTION=ls
 
 # not totally sure what this does, I *believe* it's for gnat?
 export LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
+
+# either private or local to this machine:
+if [ -f ~/dotfiles/.local ]
+then
+    source ~/dotfiles/.local
+fi
+
 # PATH additions
 PATH=$PATH:"/usr/local/gnat/bin/" #gnat (ada)
 PATH=$PATH:"/usr/local/go/bin/" #golang
