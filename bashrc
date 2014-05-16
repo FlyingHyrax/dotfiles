@@ -123,11 +123,11 @@ fi
 export LIBRARY_PATH="/usr/lib/x86_64-linux-gnu"
 
 # android is at:
-export ANDROID_HOME="$HOME/bin/android"
+export ANDROID_SDK="$HOME/bin/android"
 
 # PATH additions
 PATH=$PATH:"/usr/local/gnat/bin/" #gnat (ada)
 PATH=$PATH:"/usr/local/go/bin/" #golang
-PATH=$PATH:"$ANDROID_HOME/tools":"$ANDROID_TOOLS/platform-tools" #android
+PATH=$PATH:"$ANDROID_SDK/tools":"$ANDROID_SDK/platform-tools" #android
 PATH=$PATH:"$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:"./"
