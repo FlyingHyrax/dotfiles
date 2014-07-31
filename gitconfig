@@ -13,3 +13,15 @@
 	user = FlyingHyrax
 [push]
     default = simple
+[gui]
+	recentrepo = /Users/mattseiler/workspace/fitnet-app
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[alias]
+	last = log -1 HEAD
+    unstage = reset HEAD --
+    br = branch
+    st = status
+    co = checkout
+    ci = commit

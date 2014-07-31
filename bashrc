@@ -105,6 +105,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# enable git bash completion and git enabled prompt
+source ~/dotfiles/git-completion.bash
+source ~/dotfiles/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=yes
+GIT_PS1_SHOWSTASHSTATE=
+GIT_PS1_SHOWUNTRACKEDFILES=yes
+GIT_PS1_SHOWUPSTREAM=
+PROMPT_COMMAND='__git_ps1 "\n\u@\h:\w" "\\[\n\$ "'
+
 # for todo.sh https://github.com/ginatrapani/todo.txt-cli/wiki/Quick-Start-Guide 
 export TODOTXT_DEFAULT_ACTION=ls
 if [ -f ~/bin/todo_completion ]
