@@ -84,6 +84,7 @@ nnoremap <leader>p :set paste!<CR>
 
 " hotkey toggle whitespace indicators
 nmap <silent> <leader>s :set nolist!<CR>
+set listchars=tab:▷\ ,trail:.,eol:¬
 
 " we'll be overwriting Sensible's 'nohlsearch' hotkey; use another instead
 nnoremap <leader>hl :set hlsearch!<CR>
