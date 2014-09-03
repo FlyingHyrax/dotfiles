@@ -10,21 +10,45 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Vundle manages itself
 Plugin 'gmarik/Vundle.vim'
+" file and buffer switching
 Plugin 'kien/ctrlp.vim'
+" awesome status line
 Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
+" some nice vimrc defaults
 Plugin 'tpope/vim-sensible'
+" git integration
+Plugin 'tpope/vim-fugitive'
+
+" handling parens
+Plugin 'tpope/vim-surround'
+" linting
 Plugin 'scrooloose/syntastic.git'
+" comments
 Plugin 'scrooloose/nerdcommenter'
+
+" zen-coding html expansion
 Plugin 'mattn/emmet-vim'
+" less-css support
 Plugin 'groenewege/vim-less'
+" CoffeeScript support
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'MarcWeber/vim-addon-mw-utils' "for snipmate
-Plugin 'tomtom/tlib_vim' "for snipmate
+" Clojure support
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-fireplace'
+
+" dependencies for snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+" handy snippet plugin
 Plugin 'garbas/vim-snipmate'
+" stock snippets for the handy snippet plugin
 Plugin 'honza/vim-snippets'
+
+" solarized theme
 Plugin 'altercation/vim-colors-solarized.git'
 
 call vundle#end()
