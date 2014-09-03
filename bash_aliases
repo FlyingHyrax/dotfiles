@@ -1,6 +1,6 @@
 # bash aliases
 # todo.txt
-alias todo='todo.sh -d ~/dotfiles/todo.cfg'
+alias td='todo.sh -d ~/dotfiles/todo.cfg'
 
 # rucs accounts
 alias rucs='ssh mseiler2@rucs.radford.edu'
