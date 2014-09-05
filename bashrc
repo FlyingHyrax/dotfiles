@@ -85,11 +85,26 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# Force 256 color support on XFCE.  Ideally, this should be set in .Xresources,
+# but xfce-terminal seems to just ignore it there, so we have to do it the gross way.
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" -a "$COLORTERM" == "xfce4-terminal" ]
+then
+    if [ -e "/lib/terminfo/x/xterm-256color" ]
+    then
+        export TERM=xterm-256color
+    fi
+fi
 
+# now that we've forced 256 color support,
+# use base16-shell to modify the 256 color space so that vim will look right
+BASE16_SCHEME="monokai"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-${BASE16_SCHEME}.dark.sh"
+if [ -x $BASE16_SHELL ]
+then
+    . $BASE16_SHELL
+fi
+
+# Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -114,7 +129,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=yes
 GIT_PS1_SHOWUPSTREAM=
 PROMPT_COMMAND='__git_ps1 "\n\u@\h:\w" "\\[\n\$ "'
 
-# for todo.sh https://github.com/ginatrapani/todo.txt-cli/wiki/Quick-Start-Guide 
+# for todo.sh https://github.com/ginatrapani/todo.txt-cli/wiki/Quick-Start-Guide
 export TODOTXT_DEFAULT_ACTION=ls
 if [ -f ~/bin/todo_completion ]
 then

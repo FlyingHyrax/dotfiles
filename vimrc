@@ -49,16 +49,20 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 " solarized theme
-Plugin 'altercation/vim-colors-solarized.git'
+"Plugin 'altercation/vim-colors-solarized.git'
+" base16 themes
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 
 filetype plugin indent on
 syntax enable
 
-" set theme
+" setup theme - t_Co is not required if $TERM variable is
+" set correctly, and we take care of that elsewhere
+let base16colorspace=256
 set background=dark
-colorscheme solarized
+colorscheme base16-monokai
 
 " display and cue settings
 set title
