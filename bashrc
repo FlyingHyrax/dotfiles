@@ -87,11 +87,14 @@ fi
 
 # Force 256 color support on XFCE.  Ideally, this should be set in .Xresources,
 # but xfce-terminal seems to just ignore it there, so we have to do it the gross way.
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" -a "$COLORTERM" == "xfce4-terminal" ]
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]
 then
-    if [ -e "/lib/terminfo/x/xterm-256color" ]
+    if [ "$COLORTERM" == "xfce4-terminal" -o $COLORTERM == "gnome-terminal" ]
     then
-        export TERM=xterm-256color
+        if [ -e "/lib/terminfo/x/xterm-256color" ]
+        then
+            export TERM=xterm-256color
+        fi
     fi
 fi
 
