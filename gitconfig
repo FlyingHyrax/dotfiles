@@ -21,6 +21,7 @@
 [alias]
 	last = log -1 HEAD
     unstage = reset HEAD --
+    discard = checkout -- .
     br = branch
     st = status
     co = checkout
