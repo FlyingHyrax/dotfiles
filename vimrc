@@ -1,8 +1,11 @@
-" much general stuff is handled by vim-sensible:
-" https://github.com/tpope/vim-sensible
-" opts that are commented out are in sensible but kept for reference
-" Install vundle:
-" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Many settings that would otherwise be in here are covered by vim-sensible
+" Vundle doesn't work with fish (*sniffle), so you need to run Vundle commands
+" from bash/sh. From bash, you can use 'env SHELL=`which bash` vim +PluginInstall!" to trigger an install/update.
+
+" pre-vundling settings:
+if &shell =~# 'fish$'
+    set shell=bash
+endif
 set nocompatible
 filetype off
 
@@ -24,62 +27,51 @@ Plugin 'tpope/vim-fugitive'
 " handling parens
 Plugin 'tpope/vim-surround'
 " linting
-Plugin 'scrooloose/syntastic.git'
+" Plugin 'scrooloose/syntastic.git'
 " comments
-Plugin 'scrooloose/nerdcommenter'
+" Plugin 'scrooloose/nerdcommenter'
+" fish shell support (maybe)
+Plugin 'dag/vim-fish'
 
 " zen-coding html expansion
-Plugin 'mattn/emmet-vim'
+" Plugin 'mattn/emmet-vim'
 " less-css support
-Plugin 'groenewege/vim-less'
+" Plugin 'groenewege/vim-less'
 " CoffeeScript support
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 " Clojure support
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-leiningen'
-Plugin 'tpope/vim-fireplace'
+" Plugin 'guns/vim-clojure-static'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-leiningen'
+" Plugin 'tpope/vim-fireplace'
 
 " dependencies for snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
 " handy snippet plugin
-Plugin 'garbas/vim-snipmate'
+" Plugin 'garbas/vim-snipmate'
 " stock snippets for the handy snippet plugin
-Plugin 'honza/vim-snippets'
-
-" solarized theme
-"Plugin 'altercation/vim-colors-solarized.git'
-" base16 themes
-Plugin 'chriskempson/base16-vim'
+" Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
 filetype plugin indent on
 syntax enable
 
-" setup theme - t_Co is not required if $TERM variable is
-" set correctly, and we take care of that elsewhere
-let base16colorspace=256
+set t_Co=256
 set background=dark
-colorscheme base16-monokai
+colorscheme zenburn
 
 " display and cue settings
 set title
 set number
 set noshowmode " airline shows the mode
-" set showcmd
-" set ruler
-" set laststatus=2
 
 " tab and indentation settings
 set tabstop=4 " display a tab as 4 cols
 set shiftwidth=4 " number of cols for reindent ops
 set softtabstop=4 " number of cols when tab is pressed
 set expandtab " tabs are spaces
-" set smarttab " tabs not dumb
-" set autoindent " indents a new line to previous line's level
-" set backspace=indent,eol,start
 
 " line wrapping
 set wrap
@@ -92,7 +84,6 @@ set wrapmargin=0
 set ignorecase
 set smartcase
 set gdefault
-" set incsearch
 set hlsearch
 
 " instead of turning backups off, put them in their own directory

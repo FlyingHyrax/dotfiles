@@ -9,20 +9,14 @@
 	ui = true
 [help]
 	autocorrect = 1
-[github]
-	user = FlyingHyrax
-[push]
-    default = simple
-[gui]
-	recentrepo = /Users/mattseiler/workspace/fitnet-app
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+    tool = vimdiff
+    conflictstyle = diff3
 [alias]
 	last = log -1 HEAD
-    unstage = reset HEAD --
-    discard = checkout -- .
-    br = branch
-    st = status
-    co = checkout
-    ci = commit
+	discard = checkout -- .
+	unstage = reset HEAD --
+	br = branch
+	st = status
+	co = checkout
+	ci = commit
