@@ -1,0 +1,26 @@
+- clean: ["~"]
+
+- link:
+    ~/.profile: profile
+    ~/.bashrc: bashrc
+    ~/.vimrc: vimrc
+    ~/.vim:
+        create: true
+        path: vim/
+    ~/.gitconfig: gitconfig
+    ~/.conkyrc: conkyrc
+    ~/.todo.cfg: todo.cfg
+    ~/.config/terminator/config:
+        create: true
+        path: config/terminator/config
+    ~/.config/fish/config.fish:
+        create: true
+        path: config/fish/config.fish
+    ~/.config/fish/functions:
+        create: true
+        path: config/fish/functions/
+
+- shell:
+    - [mkdir -p ~/backup/vim/swap ~/backup/vim/views, Creating backup dirs]
+    - [git submodule update --init --recursive, Installing/updating submodules]
+    - [vim +PluginInstall! +PluginClean +qall, Vundling vim plugins]
