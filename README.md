@@ -1,33 +1,33 @@
-## dotfiles ##
-**my personal dotfiles**
+### Various runtime config files #
 
-Currently unorganized, forever a work in progress...
+**How-to:**
 
-**HowTo**
+Uses [Dotbot](https://github.com/anishathalye/dotbot) to (hopefully) make
+bootstraping new systems a breeze.  There are a few things to do first:
 
-1. Clone this in home directory (duh)
-2. Run `./makelinks.sh` to setup symlinks from home to ~/dotfiles
-3. Boostrap Vundle: `git submodule init` | `git submodule update`
-4. Install vim plugins: `PluginInstall` (in Vim)
-5. Create / copy a .local file into dotfiles, exporting
-    - `TODO_DIR` (path to todo.sh .txt files)
-    - ...and anything else particular to that box, and it will be sourced from .bashrc
+- You need recent versions of Git, Bash, and Python
+- If you're on #!, then make sure you have replaced vim-tiny with vim
+- Optionally, setup SSH keypairs so you can use the SSH clone URL below.
+- ...that should be it, I think.
 
-**notes for base16 on XFCE**
-xfce4-terminal technically supports 256 colors, but not without a headache.  
-First, check `locate xterm-256color` - if this isn't found then you need the 'ncurses-term' package
-to get the correct terminal type definition.  
-Next the $TERM variable needs to be set to 'xterm-256color'; this is supposed to be done in
-.Xresources or .Xdefaults but it looks like xfce4-terminal just ignores those, so we have to set
-it explicitely in .bashrc.  
-At this point you should be able to `echo $TERM` and get 'xterm-256color' and
-`tput colors` and get '256'.  Now that we have 256 colors to play with, we have to mix in
-the base16-shell script for our variant of choice.  
-In vim, setting `base16colorspace` lets base16-vim know to look for colors in the expanded space.
-You should not have to set t_Co=256, b/c vim determines that by inspecting the value of the
-$TERM environment variable, and we set that up earlier.  
+Then, just:
 
-**TODO:**
-- hacks to get base16 working in terminal vim in XFCE are *not* portable.
-- prevent .vim from recursively symlinking to itself when `makelinks` is run more than once.
+1. `git clone git@github.com:mr-seiler/dotfiles.git ~/dotfiles`
+2. `cd ~/dotfiles`
+3. `./install` (for bash, not fish)
 
+Shell directives are included in install.conf.yaml that should setup the `~/backup` directory for .vimrc, grab the Vundle submodule, and run PluginInstall.
+
+In the future, there may be different branches in this repository corresponding
+to different system configurations.  This isn't a very scalable solution, but
+I don't work on that many different computers.  If that doesn't hold up,
+[rcm](https://github.com/thoughtbot/rcm) would make a nice alternative (requires
+an installation, but has more options).
+
+**Things which aren't in here yet but probably should be:**
+
+- OpenBox
+- Sublime Text 2
+- Geany
+- tint2
+- SSH config (?)
