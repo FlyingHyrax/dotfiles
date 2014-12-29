@@ -125,8 +125,8 @@ if ! shopt -oq posix; then
 fi
 
 # enable git bash completion and git enabled prompt
-source ~/dotfiles/git-completion.bash
-source ~/dotfiles/git-prompt.sh
+source ~/dotfiles/gitbash/git-completion.bash
+source ~/dotfiles/gitbash/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=yes
 GIT_PS1_SHOWSTASHSTATE=
 GIT_PS1_SHOWUNTRACKEDFILES=yes
