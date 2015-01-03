@@ -138,13 +138,7 @@ export TODOTXT_DEFAULT_ACTION=ls
 if [ -f ~/bin/todo_completion ]
 then
     source ~/bin/todo_completion
-    complete -F _todo todo
-fi
-
-# either private or local to this machine:
-if [ -f ~/dotfiles/.local ]
-then
-    source ~/dotfiles/.local
+    complete -F _todo td
 fi
 
 # not totally sure what this does, I *believe* it's for gnat?

@@ -9,7 +9,12 @@
         path: vim/
     ~/.gitconfig: gitconfig
     ~/.conkyrc: conkyrc
-    ~/.todo.cfg: todo.cfg
+    ~/.todo/config:
+        create: true
+        path: todo/config
+    ~/.todo/config_conky:
+        create: true
+        path: todo/config_conky
     ~/.config/terminator/config:
         create: true
         path: config/terminator/config

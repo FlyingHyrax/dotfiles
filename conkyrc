@@ -19,6 +19,7 @@ use_xft yes
 xftfont Liberation Sans:size=9
 xftalpha 1
 update_interval 1.0
+update_interval_on_battery 2.0
 total_run_times 0
 own_window yes
 own_window_transparent yes
@@ -31,7 +32,7 @@ maximum_width 240
 draw_shades no
 draw_outline no
 draw_borders no
-draw_graph_borders no
+draw_graph_borders yes
 default_color 656667
 default_shade_color 000000
 default_outline_color 828282
@@ -42,33 +43,64 @@ no_buffers yes
 uppercase no
 cpu_avg_samples 2
 override_utf8_locale no
+short_units yes
+diskio_avg_samples 3
 ##############################################
 #  Output
 ##############################################
 TEXT
-S Y S T E M    I N F O
-${hr}
-Host:$alignr$nodename
+${font ::size=10}SYSTEM${font} ${hr}
+$nodename$alignr$sysname $kernel
 Uptime:$alignr$uptime
-RAM:$alignr$mem/$memmax
-Swap usage:$alignr$swap/$swapmax
-Disk usage:$alignr${fs_used /}/${fs_size /}
-CPU usage:$alignr${cpu cpu0}%
+CPU:$alignr${cpu cpu0}% ${cpubar cpu0 6,70}
+RAM:$alignr$mem / $memmax ${membar 6,70}
+Swap:$alignr$swap / $swapmax ${swapbar 6,70}
 
+${font ::size=10}STORAGE${font} ${hr}
+Root:$alignc${fs_used /} / ${fs_size /}$alignr${fs_free_perc /}%
+${fs_bar /}
+Data:$alignc${fs_used /mnt/Data} / ${fs_size /mnt/Data}$alignr${fs_free_perc /mnt/Data}%
+${fs_bar /mnt/Data}
+IO:${alignr}r: $diskio_read / w: $diskio_write
+$diskiograph
+# if on wireless, show eth0.  If not, check for eth0 and show that instead
 
-S H O R T C U T    K E Y S
-${hr}
-Alt+F2$alignr Run Dialog
-Alt+F3$alignr Alt Menu
-Super+Space$alignr Main Menu
-Super+Tab$alignr Client Menu
-Super+t$alignr Terminal
-Super+f$alignr File Manager
-Super+e$alignr Editor
-Super+m$alignr Media Player
-Super+w$alignr Web Browser
-Super+h$alignr Task Manager
-Super+l$alignr Lock Screen
-Super+v$alignr Volume Control
-Super+x$alignr Logout
-PrtSc$alignr Screenshot
+${font ::size=10}NETWORK${font} ${hr}
+${if_up wlan0}SSID: $alignr${wireless_essid wlan0}
+LAN IP: $alignr${addr wlan0}
+WAN IP: $alignr${execi 3600 wget -q -O - http://icanhazip.com/}
+Up: ${upspeed wlan0}${alignr}Down: ${downspeed wlan0}
+${upspeedgraph wlan0 25,100} ${downspeedgraph wlan0 25,100}
+$else ${if_up eth0}Ethernet
+LAN IP: $alignr${addr eth0}
+WAN IP: $alignr${execi 3600 wget -q -O - http://icanhazip.com/}
+Up: ${upspeed eth0}${goto 108}Down: ${downspeed eth0}
+${upspeedgraph eth0 25,100} ${downspeedgraph eth0 25,100}
+$else Disconnected $endif$endif
+${font ::size=10}TOP${font} $hr
+${font :italic:size=9}name ${alignr} pid   cpu${font}
+${top name 1} $alignr ${top pid 1} ${top cpu 1}
+${top name 2} $alignr ${top pid 2} ${top cpu 2}
+${top name 3} $alignr ${top pid 3} ${top cpu 3}
+${top name 4} $alignr ${top pid 4} ${top cpu 4}
+${top name 5} $alignr ${top pid 5} ${top cpu 5}
+
+${font ::size=10}TODO${font} $hr
+${execpi 60 todo.sh -d ~/.todo/config_conky ls}
+#
+# S H O R T C U T    K E Y S
+# ${hr}
+# Alt+F2$alignr Run Dialog
+# Alt+F3$alignr Alt Menu
+# Super+Space$alignr Main Menu
+# Super+Tab$alignr Client Menu
+# Super+t$alignr Terminal
+# Super+f$alignr File Manager
+# Super+e$alignr Editor
+# Super+m$alignr Media Player
+# Super+w$alignr Web Browser
+# Super+h$alignr Task Manager
+# Super+l$alignr Lock Screen
+# Super+v$alignr Volume Control
+# Super+x$alignr Logout
+# PrtSc$alignr Screenshot
