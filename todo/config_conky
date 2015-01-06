@@ -18,5 +18,10 @@ export LIGHT_CYAN='${color LightCyan}'
 export WHITE='${color white}'
 export DEFAULT='${color}'
 
+# overrides for zenburn colors in conky
+export PURPLE='${color #CC9393}'
+export BLUE='${color #DFAF8F}'
+export $BROWN='${color #E3CEAB}'
+
 # Proceed to the regular config
 source ~/.todo/config
