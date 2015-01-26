@@ -34,11 +34,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'dag/vim-fish'
 
 " zen-coding html expansion
-" Plugin 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 " less-css support
-" Plugin 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 " CoffeeScript support
-" Plugin 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 " Clojure support
 " Plugin 'guns/vim-clojure-static'
 " Plugin 'tpope/vim-dispatch'
