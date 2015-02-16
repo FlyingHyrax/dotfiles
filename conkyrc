@@ -59,6 +59,7 @@ Uptime:$alignr$uptime
 CPU:$alignr${cpu cpu0}% ${cpubar cpu0 6,70}
 RAM:$alignr$mem / $memmax ${membar 6,70}
 Swap:$alignr$swap / $swapmax ${swapbar 6,70}
+Battery:$alignr$battery_short ${battery_bar 6,70}
 
 ${font ::size=10}STORAGE${font} ${hr}
 Root:$alignc${fs_used /} / ${fs_size /}$alignr${fs_free_perc /}%
