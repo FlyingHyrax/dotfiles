@@ -12,19 +12,9 @@
     ~/.gitconfig:
         path: gitconfig
         force: true
-    ~/.conkyrc:
-        path: conkyrc
-        force: true
     ~/.todo/config:
         path: todo/config
         create: true
-    ~/.todo/config_conky:
-        path: todo/config_conky
-        create: true
-    ~/.config/terminator/config:
-        path: config/terminator/config
-        create: true
-        force: true
     ~/.config/fish/config.fish:
         path: config/fish/config.fish
         create: true
