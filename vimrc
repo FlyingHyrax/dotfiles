@@ -32,6 +32,8 @@ Plugin 'tpope/vim-surround'
 " Plugin 'scrooloose/nerdcommenter'
 " fish shell support (maybe)
 Plugin 'dag/vim-fish'
+" Swift language
+Plugin 'keith/swift.vim'
 
 " zen-coding html expansion
 Plugin 'mattn/emmet-vim'
