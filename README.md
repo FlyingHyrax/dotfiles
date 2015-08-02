@@ -16,13 +16,14 @@ Then, just:
 2. `cd ~/dotfiles`
 3. `./install` (for bash, not fish)
 
-Shell directives are included in install.conf.yaml that should setup the `~/backup` directory for .vimrc, grab the Vundle submodule, and run PluginInstall.
+Shell directives are included in install.conf.yaml that should setup the `~/backup`
+directory for .vimrc, grab any submodules, and run `PlugInstall`.
 
-In the future, there may be different branches in this repository corresponding
-to different system configurations.  This isn't a very scalable solution, but
-I don't work on that many different computers.  If that doesn't hold up,
-[rcm](https://github.com/thoughtbot/rcm) would make a nice alternative (requires
-an installation, but has more options).
+I'm currently using different branchs for different system configurations.
+This works alright because the setups aren't that different and I don't work
+on many different computers.  That's not very scalable, so if it doesn't work
+out then [rcm](https://github.com/thoughtbot/rcm) might make a nice alternative
+to DotBot (requires an installation, but has more options).
 
 **Things which aren't in here yet but probably should be:**
 

@@ -36,4 +36,4 @@
 - shell:
     - [mkdir -p ~/backup/vim/swap ~/backup/vim/views, Creating backup dirs]
     - [git submodule update --init --recursive, Installing/updating submodules]
-    - [vim +PluginInstall! +PluginClean +qall, Vundling vim plugins]
+    - [vim +PlugInstall +PlugClean +qall, Installing Vim plugins]

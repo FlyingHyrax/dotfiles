@@ -1,65 +1,58 @@
-" Many settings that would otherwise be in here are covered by vim-sensible
-" Vundle doesn't work with fish (*sniffle), so you need to run Vundle commands
-" from bash/sh. From bash, you can use 'env SHELL=`which bash` vim +PluginInstall!" to trigger an install/update.
-
-" pre-vundling settings:
+" Vim needs a POSIX shell, which Fish isn't
 if &shell =~# 'fish$'
     set shell=bash
 endif
 set nocompatible
-filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Start plugin installation sectons
+" Pass the directory in which we want plugins installed
+" (the 'bundle' directory is where Vundle kept plugins)
+call plug#begin('~/.vim/bundle')
 
-" Vundle manages itself
-Plugin 'gmarik/Vundle.vim'
-" file and buffer switching
-Plugin 'kien/ctrlp.vim'
-" awesome status line
-Plugin 'bling/vim-airline'
 " some nice vimrc defaults
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 " git integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
+" file and buffer switching
+Plug 'kien/ctrlp.vim'
+" awesome status line
+Plug 'bling/vim-airline'
+
+" language plugins
+" fish shell script
+Plug 'dag/vim-fish'
+" Apple Swift
+Plug 'keith/swift.vim'
+" less-css
+Plug 'groenewege/vim-less'
+" CoffeeScript
+Plug 'kchmck/vim-coffee-script'
+" Clojure
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-dispatch', { 'for': 'clojure' }
+Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " handling parens
-Plugin 'tpope/vim-surround'
-" linting
-" Plugin 'scrooloose/syntastic.git'
-" comments
-" Plugin 'scrooloose/nerdcommenter'
-" fish shell support (maybe)
-Plugin 'dag/vim-fish'
-" Swift language
-Plugin 'keith/swift.vim'
-
+Plug 'tpope/vim-surround'
 " zen-coding html expansion
-Plugin 'mattn/emmet-vim'
-" less-css support
-Plugin 'groenewege/vim-less'
-" CoffeeScript support
-Plugin 'kchmck/vim-coffee-script'
-" Clojure support
-" Plugin 'guns/vim-clojure-static'
-" Plugin 'tpope/vim-dispatch'
-" Plugin 'tpope/vim-leiningen'
-" Plugin 'tpope/vim-fireplace'
-
-" dependencies for snipmate
-" Plugin 'MarcWeber/vim-addon-mw-utils'
-" Plugin 'tomtom/tlib_vim'
+Plug 'mattn/emmet-vim'
+" linting
+" Plug 'scrooloose/syntastic.git'
+" comments
+" Plug 'scrooloose/nerdcommenter'
+" snippets
+" dependencies for snipmate:
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
 " handy snippet plugin
-" Plugin 'garbas/vim-snipmate'
+" Plug 'garbas/vim-snipmate'
 " stock snippets for the handy snippet plugin
-" Plugin 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
-call vundle#end()
+call plug#end()
 
-filetype plugin indent on
-syntax enable
-
+" color scheme
 set t_Co=256
 set background=dark
 colorscheme zenburn
