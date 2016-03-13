@@ -20,5 +20,6 @@
 	st = status
 	co = checkout
 	ci = commit
+	logr = log --all --graph --oneline --decorate
 [push]
 	default = simple
