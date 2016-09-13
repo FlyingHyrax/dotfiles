@@ -16,7 +16,8 @@ Plug 'tpope/vim-fugitive'
 " file and buffer switching
 Plug 'kien/ctrlp.vim'
 " awesome status line
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " language plugins
 " fish shell script
@@ -120,6 +121,8 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 " sets up special font for Airline
 let g:airline_powerline_fonts = 1
+" turn on fancy tab bar
+let g:airline#extensions#tabline#enabled = 1
 
 " Strip trailing whitespace from all lines when saving
 autocmd BufWritePre * :%s/\s\+$//e
