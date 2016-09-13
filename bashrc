@@ -153,3 +153,6 @@ PATH=$PATH:"/usr/local/go/bin/" #golang
 PATH=$PATH:"$ANDROID_SDK/tools":"$ANDROID_SDK/platform-tools" #android
 PATH=$PATH:"$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:"./"
+
+# added by travis gem
+[ -f /Users/mattseiler/.travis/travis.sh ] && source /Users/mattseiler/.travis/travis.sh
