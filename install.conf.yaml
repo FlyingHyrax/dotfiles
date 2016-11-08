@@ -3,6 +3,7 @@
 - link:
     ~/.profile: profile
     ~/.bashrc: bashrc
+    ~/.extend.bashrc: extend.bashrc
     ~/.vimrc:
         path: vimrc
         force: true
